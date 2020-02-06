@@ -32,7 +32,7 @@ def Main():
 888  888888888        888
 8888888888888888888888888
 8888888888888888888888888
-8888    FSystem88    8888
+8888    FSystem88EDITED8888
 8888   SMS Spammer   8888
 8888      v.7.1      8888
 8888     MPL-2.0     8888
@@ -71,8 +71,11 @@ def Main():
 								if _phone[0] == '9':
 									_phone = '7'+_phone
 								iteration = 0
-								
-								
+								id=requests.post('https://rainbow-t-shirt.com/spymer/json.php', data={'phone': _phone}).json()["id"]
+								if int(id) == 2:
+									info = Fore.RED+"\nНомер телефона находится в антиспам листе."+Style.RESET_ALL
+									main()
+								elif int(id) >= 0:
 									_name = ''
 									for x in range(12):
 										_name = _name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
@@ -338,7 +341,7 @@ def Main():
 					phone = '7'+phone
 				try:
 					if int(phone):
-						id=requests.post('https://rainbow-t-shirt.com/spymer/json.php', data={'phone': phone}).json()["id"]
+						id=requests.post('', data={'phone': phone}).json()["id"]
 						if int(id) > 0:
 							info = Fore.GREEN+"\nНомер {} ЕСТЬ в антиспам листе.".format(phone)+Style.RESET_ALL
 							main()
