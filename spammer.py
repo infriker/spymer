@@ -72,8 +72,7 @@ def Main():
 									_phone = '7'+_phone
 								iteration = 0
 								
-									main()
-							
+								
 									_name = ''
 									for x in range(12):
 										_name = _name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
